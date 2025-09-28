@@ -10,15 +10,19 @@ const objectives = [
 export function Vision() {
   return (
     <section id="vision" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-      <div className="grid items-start gap-8 md:grid-cols-2">
-        <div>
+      <div className="grid items-center gap-8 md:grid-cols-2">
+        <div className="w-full max-w-sm order-2 md:order-2 md:ml-37">
+          {/* JIS University campus image */}
+          <img alt="JIS University campus" src="/JISU_Campus.jpg" className="w-full h-auto object-cover rounded-lg" />
+        </div>
+        <div className="order-1 md:order-1">
           <h2 className="text-pretty text-3xl font-semibold tracking-tight">Our Vision</h2>
           <p className="mt-3 text-muted-foreground">
             We align clear objectives with consistent action. Here’s what guides our efforts:
           </p>
           <ul className="mt-6 space-y-4">
             {objectives.map((o, i) => (
-              <li key={o} className="group flex items-start gap-3">
+              <li key={o} className="group flex items-start gap-5">
                 <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent text-accent-foreground">
                   {i + 1}
                 </span>
@@ -27,10 +31,6 @@ export function Vision() {
             ))}
           </ul>
         </div>
-        <Card className="aspect-[4/3] overflow-hidden">
-          {/* Placeholder campus image */}
-          <img alt="JIS University campus" src="/university-campus.png" className="h-full w-full object-cover" />
-        </Card>
       </div>
     </section>
   )

@@ -1,10 +1,12 @@
+import { Linkedin, Twitter, Instagram, Github, Mail } from "lucide-react"
+
 export function Footer() {
   const socials = [
-    { label: "LinkedIn", icon: "i-lucide-linkedin", href: "#" },
-    { label: "Twitter/X", icon: "i-lucide-twitter", href: "#" },
-    { label: "Instagram", icon: "i-lucide-instagram", href: "#" },
-    { label: "GitHub", icon: "i-lucide-github", href: "#" },
-    { label: "Google Groups", icon: "i-lucide-mail", href: "#" },
+    { label: "LinkedIn", icon: Linkedin, href: "#" },
+    { label: "Twitter/X", icon: Twitter, href: "#" },
+    { label: "Instagram", icon: Instagram, href: "#" },
+    { label: "GitHub", icon: Github, href: "#" },
+    { label: "Google Groups", icon: Mail, href: "#" },
   ]
 
   return (
@@ -14,17 +16,19 @@ export function Footer() {
         <p className="mt-1 text-sm text-muted-foreground">Find us on any of these platforms.</p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          {socials.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              aria-label={s.label}
-              className="inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-sm shadow-sm transition hover:-translate-y-0.5 hover:shadow"
-            >
-              <span className={`${s.icon} h-4 w-4 text-primary`} />
-              <span>{s.label}</span>
-            </a>
-          ))}
+          {socials.map((s) => {
+            const IconComponent = s.icon
+            return (
+              <a
+                key={s.label}
+                href={s.href}
+                aria-label={s.label}
+                className="inline-flex items-center justify-center rounded-full bg-background p-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow"
+              >
+                <IconComponent className="h-5 w-5 text-primary" />
+              </a>
+            )
+          })}
         </div>
 
         <p className="mt-10 text-xs text-muted-foreground">
