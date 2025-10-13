@@ -1,0 +1,12 @@
+Create separate sections with proper headings and member images for each role group:
+Student Coordinator: Mr. Achyut Mitra (M.Tech, CSE)
+Faculty Coordinators: Dr. Paramita Sarkar (Assistant Professor, CSE), Dr. Abhrendu Bhattacharya (Assistant Professor, CSE)
+Members: Dr. Rajesh Bose (Professor, CSE), Dr. Sandip Roy (Professor & HOD, CSE)
+Chairperson: Ridhirup Ghosh
+Vice Chairperson: Sneha Majumdar
+Treasurer: Rakesh Nandi
+Postmen: Souvik Karmakar, Anindita Bhattacharya
+Web Admin: Utsab Ghoshal
+Co-Web Admins: Aditya Jha, Rajkishore Huduk
+Executive Members: Soumyadip Banerjee, Haranath Khan, Pritam Bhuin
+Format the content in a clean, well-structured layout suitable for a webpage or markdown file, using clear section headings and bold text for names and designations."
