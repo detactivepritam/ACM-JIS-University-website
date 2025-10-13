@@ -10,8 +10,13 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="#" className="font-semibold tracking-tight">
-          ACM JIS University
+        <Link href="#" className="flex items-center gap-2 font-semibold tracking-tight">
+          <img 
+            src="/acm-logo.jpg" 
+            alt="ACM JIS University Logo" 
+            className="h-10 w-auto object-contain mix-blend-multiply"
+          />
+          <span className="text-lg">ACM JIS University</span>
         </Link>
         <nav className={cn("items-center gap-6 md:flex", open ? "flex" : "hidden")}>
           <a href="#about" className="text-sm text-muted-foreground hover:text-foreground">

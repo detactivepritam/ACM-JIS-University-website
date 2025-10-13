@@ -130,27 +130,25 @@ function MemberCard({ member }: { member: typeof teamData.studentCoordinator[0] 
     .toUpperCase()
 
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-      <CardHeader className="items-center">
-        <Avatar className="h-20 w-20">
+    <div className="group text-center transition-all duration-300 hover:scale-105">
+      <div className="flex justify-center mb-4">
+        <Avatar className="h-32 w-32">
           <AvatarImage src={member.image} alt={member.name} />
-          <AvatarFallback className="text-sm font-semibold bg-primary/10 text-primary">
+          <AvatarFallback className="text-2xl font-semibold bg-primary/10 text-primary">
             {initials}
           </AvatarFallback>
         </Avatar>
-        <CardTitle className="mt-3 text-balance text-center text-base">
-          <strong>{member.name}</strong>
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="text-center">
-        <p className="text-primary font-medium mb-1 text-sm">
-          <strong>{member.role}</strong>
-        </p>
-        <p className="text-xs text-muted-foreground">
-          {member.designation}
-        </p>
-      </CardContent>
-    </Card>
+      </div>
+      <h3 className="text-lg font-bold mb-2">
+        {member.name}
+      </h3>
+      <p className="text-primary font-medium mb-1">
+        {member.role}
+      </p>
+      <p className="text-sm text-muted-foreground">
+        {member.designation}
+      </p>
+    </div>
   )
 }
 
