@@ -209,8 +209,8 @@ function MemberCard({ member }: { member: TeamMember }) {
 
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-      <CardHeader className="items-center">
-        <Avatar className="h-24 w-24">
+      <CardHeader className="items-center justify-items-center text-center">
+        <Avatar className="h-24 w-24 mx-auto">
           <AvatarImage src={member.image} alt={member.name} />
           <AvatarFallback className="text-lg font-semibold bg-primary/10 text-primary">
             {initials}
