@@ -20,8 +20,18 @@ export function WhyJoin() {
               Members get priority access to events, volunteering opportunities, and leadership roles within the
               chapter. Join us to learn, build, and contribute!
             </p>
-            <Button variant="secondary" className="mt-4">
-              Become a member
+            <Button
+              asChild
+              variant="secondary"
+              className="mt-4"
+            >
+              <a
+                href="https://www.acm.org/membership/join"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Become a member
+              </a>
             </Button>
           </div>
         </CardContent>
