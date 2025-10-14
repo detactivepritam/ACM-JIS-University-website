@@ -124,7 +124,7 @@ const teamData: Record<
       name: "Pritam Bhuin",
       role: "Executive Member",
       designation: "Student Member",
-      image: "/Pritam Bhuin.jpg",
+      image: "/team/Pritam Bhuin.jpg",
     },
     {
       name: "Soumyadip Banerjee",
