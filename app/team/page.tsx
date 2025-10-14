@@ -121,6 +121,12 @@ const teamData: Record<
 
   executiveMembers: [
     {
+      name: "Pritam Bhuin",
+      role: "Executive Member",
+      designation: "Student Member",
+      image: "/Pritam Bhuin.jpg",
+    },
+    {
       name: "Soumyadip Banerjee",
       role: "Executive Member",
       designation: "Student Member",
@@ -131,13 +137,7 @@ const teamData: Record<
       role: "Executive Member",
       designation: "Student Member",
       image: "/team/haranath-khan.jpg",
-    },
-    {
-      name: "Pritam Bhuin",
-      role: "Executive Member",
-      designation: "Student Member",
-      image: "/team/pritam-bhuin.jpg",
-    },
+    },  
   ],
 }
 
