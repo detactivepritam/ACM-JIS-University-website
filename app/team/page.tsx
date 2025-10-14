@@ -1,18 +1,37 @@
+"use client"
+
+import * as React from "react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 
-// Team data organized by roles
-const teamData = {
+type TeamMember = {
+  name: string
+  role: string
+  designation: string
+  image: string
+}
+
+const teamData: Record<
+  | "studentCoordinator"
+  | "facultyCoordinators"
+  | "facultyMembers"
+  | "executiveBoard"
+  | "webTeam"
+  | "postmen"
+  | "executiveMembers",
+  TeamMember[]
+> = {
   studentCoordinator: [
     {
       name: "Mr. Achyut Mitra",
       role: "Student Coordinator",
       designation: "M.Tech, CSE",
       image: "/team/achyut-mitra.jpg",
-    }
+    },
   ],
-  
+
   facultyCoordinators: [
     {
       name: "Dr. Paramita Sarkar",
@@ -21,11 +40,11 @@ const teamData = {
       image: "/team/paramita-sarkar.jpg",
     },
     {
-      name: "Dr. Abhrendu Bhattacharya", 
+      name: "Dr. Abhrendu Bhattacharya",
       role: "Faculty Coordinator",
       designation: "Assistant Professor, CSE",
       image: "/team/abhrendu-bhattacharya.jpg",
-    }
+    },
   ],
 
   facultyMembers: [
@@ -37,10 +56,10 @@ const teamData = {
     },
     {
       name: "Dr. Sandip Roy",
-      role: "Faculty Member", 
+      role: "Faculty Member",
       designation: "Professor & HOD, CSE",
       image: "/team/sandip-roy.jpg",
-    }
+    },
   ],
 
   executiveBoard: [
@@ -52,16 +71,16 @@ const teamData = {
     },
     {
       name: "Sneha Majumdar",
-      role: "Vice Chairperson", 
+      role: "Vice Chairperson",
       designation: "Student Leader",
       image: "/team/sneha-majumdar.jpg",
     },
     {
       name: "Rakesh Nandi",
       role: "Treasurer",
-      designation: "Student Leader", 
+      designation: "Student Leader",
       image: "/team/rakesh-nandi.jpg",
-    }
+    },
   ],
 
   webTeam: [
@@ -78,11 +97,11 @@ const teamData = {
       image: "/team/aditya-jha.jpg",
     },
     {
-      name: "Rajkishore Huduk", 
+      name: "Rajkishore Huduk",
       role: "Co-Web Admin",
       designation: "Technical Team",
       image: "/team/rajkishore-huduk.jpg",
-    }
+    },
   ],
 
   postmen: [
@@ -94,10 +113,10 @@ const teamData = {
     },
     {
       name: "Anindita Bhattacharya",
-      role: "Postman", 
+      role: "Postman",
       designation: "Communication Team",
       image: "/team/anindita-bhattacharya.jpg",
-    }
+    },
   ],
 
   executiveMembers: [
@@ -110,7 +129,7 @@ const teamData = {
     {
       name: "Haranath Khan",
       role: "Executive Member",
-      designation: "Student Member", 
+      designation: "Student Member",
       image: "/team/haranath-khan.jpg",
     },
     {
@@ -118,15 +137,73 @@ const teamData = {
       role: "Executive Member",
       designation: "Student Member",
       image: "/team/pritam-bhuin.jpg",
-    }
-  ]
+    },
+  ],
 }
 
-// Member Card Component
-function MemberCard({ member }: { member: typeof teamData.studentCoordinator[0] }) {
+const primaryWebTeamMembers = teamData.webTeam.filter(
+  member => member.role === "Web Admin",
+)
+const extendedWebTeamMembers = teamData.webTeam.filter(
+  member => member.role !== "Web Admin",
+)
+
+type TeamSectionConfig = {
+  key: string
+  title: string
+  members: TeamMember[]
+}
+
+const featuredSections: TeamSectionConfig[] = [
+  {
+    key: "studentCoordinator",
+    title: "Student Coordinator",
+    members: teamData.studentCoordinator,
+  },
+  {
+    key: "facultyCoordinators",
+    title: "Faculty Coordinators",
+    members: teamData.facultyCoordinators,
+  },
+  {
+    key: "executiveBoard",
+    title: "Executive Board",
+    members: teamData.executiveBoard,
+  },
+  {
+    key: "webAdmin",
+    title: "Web Development Team",
+    members: primaryWebTeamMembers,
+  },
+]
+
+const extendedSections: TeamSectionConfig[] = [
+  {
+    key: "webTeamExtended",
+    title: "Web Development Team",
+    members: extendedWebTeamMembers,
+  },
+  {
+    key: "facultyMembers",
+    title: "Faculty Members",
+    members: teamData.facultyMembers,
+  },
+  {
+    key: "communicationTeam",
+    title: "Communication Team",
+    members: teamData.postmen,
+  },
+  {
+    key: "executiveMembers",
+    title: "Executive Members",
+    members: teamData.executiveMembers,
+  },
+]
+
+function MemberCard({ member }: { member: TeamMember }) {
   const initials = member.name
     .split(" ")
-    .map(n => n[0])
+    .map(namePart => namePart[0])
     .join("")
     .toUpperCase()
 
@@ -147,16 +224,17 @@ function MemberCard({ member }: { member: typeof teamData.studentCoordinator[0] 
         <p className="text-primary font-medium mb-1">
           <strong>{member.role}</strong>
         </p>
-        <p className="text-sm text-muted-foreground">
-          {member.designation}
-        </p>
+        <p className="text-sm text-muted-foreground">{member.designation}</p>
       </CardContent>
     </Card>
   )
 }
 
-// Team Section Component
-function TeamSection({ title, members }: { title: string; members: typeof teamData.studentCoordinator }) {
+function TeamSection({ title, members }: { title: string; members: TeamMember[] }) {
+  if (members.length === 0) {
+    return null
+  }
+
   const getGridCols = (count: number) => {
     if (count === 1) return "grid-cols-1 md:grid-cols-1 lg:grid-cols-1 max-w-sm mx-auto"
     if (count === 2) return "grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-2xl mx-auto"
@@ -179,6 +257,8 @@ function TeamSection({ title, members }: { title: string; members: typeof teamDa
 }
 
 export default function FullTeamPage() {
+  const [isExpanded, setIsExpanded] = React.useState(false)
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">
       <div className="mb-10 flex items-center justify-between">
@@ -194,47 +274,35 @@ export default function FullTeamPage() {
         </p>
       </div>
 
-      {/* Student Coordinator */}
-      <TeamSection 
-        title="Student Coordinator" 
-        members={teamData.studentCoordinator} 
-      />
+      {featuredSections
+        .filter(section => section.members.length > 0)
+        .map(section => (
+          <TeamSection key={section.key} title={section.title} members={section.members} />
+        ))}
 
-      {/* Faculty Coordinators */}
-      <TeamSection 
-        title="Faculty Coordinators" 
-        members={teamData.facultyCoordinators} 
-      />
+      <div className="flex justify-center">
+        <Button
+          type="button"
+          variant="outline"
+          aria-expanded={isExpanded}
+          aria-controls="full-team-details"
+          onClick={() => setIsExpanded(previous => !previous)}
+        >
+          {isExpanded ? "Hide full team details" : "Click to see full team details"}
+        </Button>
+      </div>
 
-      {/* Faculty Members */}
-      <TeamSection 
-        title="Faculty Members" 
-        members={teamData.facultyMembers} 
-      />
-
-      {/* Executive Board */}
-      <TeamSection 
-        title="Executive Board" 
-        members={teamData.executiveBoard} 
-      />
-
-      {/* Web Development Team */}
-      <TeamSection 
-        title="Web Development Team" 
-        members={teamData.webTeam} 
-      />
-
-      {/* Communication Team */}
-      <TeamSection 
-        title="Communication Team" 
-        members={teamData.postmen} 
-      />
-
-      {/* Executive Members */}
-      <TeamSection 
-        title="Executive Members" 
-        members={teamData.executiveMembers} 
-      />
+      <div
+        id="full-team-details"
+        aria-hidden={!isExpanded}
+        className={isExpanded ? "mt-12" : "hidden"}
+      >
+        {extendedSections
+          .filter(section => section.members.length > 0)
+          .map(section => (
+            <TeamSection key={section.key} title={section.title} members={section.members} />
+          ))}
+      </div>
     </div>
   )
 }
