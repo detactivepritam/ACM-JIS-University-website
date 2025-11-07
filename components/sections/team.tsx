@@ -120,6 +120,12 @@ const teamData: Record<
 
   executiveMembers: [
     {
+      name: "Pritam Bhuin",
+      role: "Executive Member",
+      designation: "Student Member",
+      image: "/team/Pritam Bhuin.jpg",
+    },
+    {
       name: "Soumyadip Banerjee",
       role: "Executive Member",
       designation: "Student Member",
@@ -130,12 +136,6 @@ const teamData: Record<
       role: "Executive Member",
       designation: "Student Member",
       image: "/team/haranath-khan.jpg",
-    },
-    {
-      name: "Pritam Bhuin",
-      role: "Executive Member",
-      designation: "Student Member",
-      image: "/team/pritam-bhuin.jpg",
     },
   ],
 }
@@ -209,8 +209,12 @@ function MemberCard({ member }: { member: TeamMember }) {
   return (
     <Card className="group text-center transition-all duration-300 hover:scale-105">
       <CardHeader className="items-center justify-items-center text-center">
-        <Avatar className="h-32 w-32 mx-auto">
-          <AvatarImage src={member.image} alt={member.name} />
+        <Avatar className="h-40 w-40 mx-auto">
+          <AvatarImage 
+            src={member.image} 
+            alt={member.name} 
+            className="object-cover object-center"
+          />
           <AvatarFallback className="text-2xl font-semibold bg-primary/10 text-primary">
             {initials}
           </AvatarFallback>
