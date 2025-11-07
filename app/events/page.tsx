@@ -22,19 +22,26 @@ export default function EventsPage() {
   return (
     <main className="min-h-screen flex flex-col">
       <SiteHeader />
-      
-      <section className="flex-1 bg-gradient-to-br from-background via-background to-secondary">
-        <div className="mx-auto max-w-6xl px-4 py-20 md:py-28">
+
+      <section className="flex-1 relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/10">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/10 blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-primary/5 blur-3xl"></div>
+        </div>
+
+        <div className="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
           {/* Header */}
-          <div className="mb-16 text-center">
-            <div className="mb-6 inline-block rounded-full bg-primary/10 px-4 py-2">
+          <div className="mb-20 text-center">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 border border-primary/20">
+              <Zap className="w-4 h-4 text-primary" />
               <p className="text-sm font-medium text-primary">Exciting Opportunities Ahead</p>
             </div>
-            <h1 className="text-balance text-4xl font-bold tracking-tight md:text-5xl">
+            <h1 className="text-balance text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent pb-2">
               Events Coming Soon
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              ACM JIS University Student Chapter is planning amazing events, workshops, and competitions. 
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+              ACM JIS University Student Chapter is planning amazing events, workshops, and competitions.
               Stay tuned for more details!
             </p>
           </div>
