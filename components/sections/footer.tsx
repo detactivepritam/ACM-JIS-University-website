@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Instagram, Github, Mail } from "lucide-react"
+import { Linkedin, Twitter, Instagram, Github, Mail, Facebook } from "lucide-react"
 
 export function Footer() {
   const socials = [
