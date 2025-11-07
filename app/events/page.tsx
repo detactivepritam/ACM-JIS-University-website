@@ -47,53 +47,74 @@ export default function EventsPage() {
           </div>
 
           {/* Events Grid */}
-          <div className="flex justify-center mb-12 w-full">
-            <div className="w-full max-w-md">
-            {upcomingEvents.map((event) => (
-              <div
-                key={event.id}
-                className="group relative rounded-xl border bg-background p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/50"
-              >
-                {/* Category Badge */}
-                <div className="mb-4 inline-block rounded-md bg-primary/10 px-3 py-1">
-                  <span className="text-xs font-semibold text-primary">
-                    {event.category}
-                  </span>
-                </div>
+          <div className="flex justify-center mb-16 w-full">
+            <div className="w-full max-w-2xl">
+              {upcomingEvents.map((event) => (
+                <div
+                  key={event.id}
+                  className="group relative rounded-2xl border border-primary/20 bg-gradient-to-br from-background to-background/80 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 overflow-hidden"
+                >
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Event Title */}
-                <h3 className="mb-2 text-xl font-bold text-foreground">
-                  {event.title}
-                </h3>
+                  <div className="relative">
+                    {/* Category Badge */}
+                    <div className="mb-6 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-primary/20 to-primary/10 px-4 py-2 border border-primary/30">
+                      <Users className="w-3.5 h-3.5 text-primary" />
+                      <span className="text-xs font-bold text-primary uppercase tracking-wide">
+                        {event.category}
+                      </span>
+                    </div>
 
-                {/* Event Description */}
-                <p className="mb-6 text-sm text-muted-foreground">
-                  {event.description}
-                </p>
+                    {/* Event Title */}
+                    <h3 className="mb-3 text-3xl md:text-4xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
+                      {event.title}
+                    </h3>
 
-                {/* Event Details */}
-                <div className="space-y-3 border-t pt-4">
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <Calendar className="h-4 w-4 text-primary" />
-                    <span>{event.date}</span>
+                    {/* Event Description */}
+                    <p className="mb-8 text-base text-muted-foreground leading-relaxed">
+                      {event.description}
+                    </p>
+
+                    {/* Event Details */}
+                    <div className="space-y-4 border-t border-primary/10 pt-6 mb-6">
+                      <div className="flex items-center gap-4 text-sm">
+                        <div className="rounded-lg bg-primary/10 p-3">
+                          <Calendar className="h-5 w-5 text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-muted-foreground uppercase tracking-wide">Date</p>
+                          <p className="font-semibold text-foreground">{event.date}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 text-sm">
+                        <div className="rounded-lg bg-primary/10 p-3">
+                          <Clock className="h-5 w-5 text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-muted-foreground uppercase tracking-wide">Time</p>
+                          <p className="font-semibold text-foreground">{event.time}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 text-sm">
+                        <div className="rounded-lg bg-primary/10 p-3">
+                          <MapPin className="h-5 w-5 text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-muted-foreground uppercase tracking-wide">Location</p>
+                          <p className="font-semibold text-foreground">{event.location}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="flex items-center gap-2 text-base font-semibold text-primary transition-all group-hover:translate-x-1">
+                      <span>Register Soon</span>
+                      <ArrowRight className="h-5 w-5" />
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4 text-primary" />
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <MapPin className="h-4 w-4 text-primary" />
-                    <span>{event.location}</span>
-                  </div>
                 </div>
-
-                {/* Hover Arrow */}
-                <div className="mt-6 flex items-center text-sm font-medium text-primary transition-all group-hover:translate-x-1">
-                  <span>Register Soon</span>
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </div>
-              </div>
-            ))}
+              ))}
             </div>
           </div>
 
