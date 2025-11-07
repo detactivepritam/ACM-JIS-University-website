@@ -19,7 +19,9 @@ export function Hero() {
           excellence.
         </p>
         <div className="mt-8 flex items-center justify-center gap-3">
-          <Button size="lg">Explore Events</Button>
+          <Button size="lg" asChild>
+            <Link href="/events">Explore Events</Link>
+          </Button>
           <Button variant="secondary" size="lg" asChild>
             <a href="#why-join">Why Join?</a>
           </Button>
