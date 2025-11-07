@@ -1,12 +1,13 @@
-import { Linkedin, Twitter, Instagram, Github, Mail } from "lucide-react"
+import { Linkedin, Twitter, Instagram, Github, Mail, Facebook } from "lucide-react"
 
 export function Footer() {
   const socials = [
-    { label: "LinkedIn", icon: Linkedin, href: "#" },
-    { label: "Twitter/X", icon: Twitter, href: "#" },
-    { label: "Instagram", icon: Instagram, href: "#" },
-    { label: "GitHub", icon: Github, href: "#" },
-    { label: "Google Groups", icon: Mail, href: "#" },
+    { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/acm-jisu-ab9504391/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { label: "Twitter/X", icon: Twitter, href: "https://x.com/Jisu_acm?t=XK-qpu9_bIsONRbeB9dxHA&s=09" },
+    { label: "Instagram", icon: Instagram, href: "https://www.instagram.com/jisu.acm?igsh=Ym50eG9jYnZudnNs" },
+    { label: "Facebook", icon: Facebook, href: "https://www.facebook.com/share/17HKYz1z1j/" },
+    { label: "GitHub", icon: Github, href: "https://github.com/detactivepritam/ACM-JIS-University-website" },
+    { label: "Email", icon: Mail, href: "mailto:acm@jisuniversity.ac.in" },
   ]
 
   return (
@@ -18,11 +19,14 @@ export function Footer() {
         <div className="mt-6 flex flex-wrap items-center gap-3">
           {socials.map((s) => {
             const IconComponent = s.icon
+            const isEmail = s.href.startsWith("mailto:")
             return (
               <a
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
+                target={isEmail ? undefined : "_blank"}
+                rel={isEmail ? undefined : "noreferrer"}
                 className="inline-flex items-center justify-center rounded-full bg-background p-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow"
               >
                 <IconComponent className="h-5 w-5 text-primary" />
