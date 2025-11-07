@@ -1,0 +1,158 @@
+'use client'
+
+import { Button } from "@/components/ui/button"
+import { SiteHeader } from "@/components/site-header"
+import { Footer } from "@/components/sections/footer"
+import Link from "next/link"
+import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react"
+
+export default function EventsPage() {
+  const upcomingEvents = [
+    {
+      id: 1,
+      title: "ACM Tech Meetup 2024",
+      description: "Join us for an exciting discussion on latest trends in computer science and technology.",
+      date: "Coming Soon",
+      time: "TBA",
+      location: "JIS University Campus",
+      category: "Meetup"
+    },
+    {
+      id: 2,
+      title: "Hackathon Challenge",
+      description: "Showcase your coding skills and build something amazing in this 48-hour hackathon.",
+      date: "Coming Soon",
+      time: "TBA",
+      location: "JIS University Campus",
+      category: "Competition"
+    },
+    {
+      id: 3,
+      title: "Tech Workshop Series",
+      description: "Learn practical skills from industry experts in web development, AI, and cloud computing.",
+      date: "Coming Soon",
+      time: "TBA",
+      location: "JIS University Campus",
+      category: "Workshop"
+    },
+    {
+      id: 4,
+      title: "Career Talk Session",
+      description: "Hear from senior professionals about career opportunities and growth in tech industry.",
+      date: "Coming Soon",
+      time: "TBA",
+      location: "JIS University Campus",
+      category: "Seminar"
+    }
+  ]
+
+  return (
+    <main className="min-h-screen flex flex-col">
+      <SiteHeader />
+      
+      <section className="flex-1 bg-gradient-to-br from-background via-background to-secondary">
+        <div className="mx-auto max-w-6xl px-4 py-20 md:py-28">
+          {/* Header */}
+          <div className="mb-16 text-center">
+            <div className="mb-6 inline-block rounded-full bg-primary/10 px-4 py-2">
+              <p className="text-sm font-medium text-primary">Exciting Opportunities Ahead</p>
+            </div>
+            <h1 className="text-balance text-4xl font-bold tracking-tight md:text-5xl">
+              Events Coming Soon
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+              ACM JIS University Student Chapter is planning amazing events, workshops, and competitions. 
+              Stay tuned for more details!
+            </p>
+          </div>
+
+          {/* Events Grid */}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 mb-12">
+            {upcomingEvents.map((event) => (
+              <div
+                key={event.id}
+                className="group relative rounded-xl border bg-background p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/50"
+              >
+                {/* Category Badge */}
+                <div className="mb-4 inline-block rounded-md bg-primary/10 px-3 py-1">
+                  <span className="text-xs font-semibold text-primary">
+                    {event.category}
+                  </span>
+                </div>
+
+                {/* Event Title */}
+                <h3 className="mb-2 text-xl font-bold text-foreground">
+                  {event.title}
+                </h3>
+
+                {/* Event Description */}
+                <p className="mb-6 text-sm text-muted-foreground">
+                  {event.description}
+                </p>
+
+                {/* Event Details */}
+                <div className="space-y-3 border-t pt-4">
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4 text-primary" />
+                    <span>{event.date}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <Clock className="h-4 w-4 text-primary" />
+                    <span>{event.time}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <MapPin className="h-4 w-4 text-primary" />
+                    <span>{event.location}</span>
+                  </div>
+                </div>
+
+                {/* Hover Arrow */}
+                <div className="mt-6 flex items-center text-sm font-medium text-primary transition-all group-hover:translate-x-1">
+                  <span>Register Soon</span>
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Call to Action Section */}
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-8 text-center md:p-12">
+            <h2 className="mb-4 text-2xl font-bold">Stay Updated on Our Events</h2>
+            <p className="mx-auto mb-8 max-w-xl text-muted-foreground">
+              Don't miss out on amazing opportunities to learn, connect, and grow with ACM JIS University. 
+              Check back soon for detailed information and registration!
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button asChild>
+                <Link href="/">
+                  Back to Home
+                </Link>
+              </Button>
+              <Button variant="outline">
+                Follow Us on Social Media
+              </Button>
+            </div>
+          </div>
+
+          {/* Coming Soon Banner */}
+          <div className="mt-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 p-8 text-center">
+            <div className="inline-block rounded-full bg-primary/20 px-4 py-2 mb-4">
+              <p className="text-sm font-medium text-primary flex items-center gap-2">
+                <span className="relative inline-block">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-pulse"></span>
+                  <span className="relative inline-block h-2 w-2 rounded-full bg-primary"></span>
+                </span>
+                We're Preparing Something Special
+              </p>
+            </div>
+            <p className="text-muted-foreground">
+              More events will be announced soon. Subscribe to our email list or follow our social media for updates.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  )
+}
