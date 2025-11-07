@@ -40,7 +40,7 @@ export default function EventsPage() {
           </div>
 
           {/* Events Grid */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 mb-12">
+          <div className="flex justify-center mb-12">
             {upcomingEvents.map((event) => (
               <div
                 key={event.id}
