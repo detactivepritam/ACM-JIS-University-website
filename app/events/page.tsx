@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { SiteHeader } from "@/components/site-header"
 import { Footer } from "@/components/sections/footer"
 import Link from "next/link"
-import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react"
+import { Calendar, Clock, MapPin, ArrowRight, Zap, Users } from "lucide-react"
 
 export default function EventsPage() {
   const upcomingEvents = [
