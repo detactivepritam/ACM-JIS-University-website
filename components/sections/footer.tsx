@@ -19,13 +19,13 @@ export function Footer() {
         <div className="mt-6 flex flex-wrap items-center gap-3">
           {socials.map((s) => {
             const IconComponent = s.icon
+            const isEmail = s.href.startsWith("mailto:")
             return (
               <a
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
-                target="_blank"
-                rel="noreferrer"
+                {...(!isEmail && { target: "_blank", rel: "noreferrer" })}
                 className="inline-flex items-center justify-center rounded-full bg-background p-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow"
               >
                 <IconComponent className="h-5 w-5 text-primary" />
