@@ -16,33 +16,6 @@ export default function EventsPage() {
       time: "TBA",
       location: "JIS University Campus",
       category: "Meetup"
-    },
-    {
-      id: 2,
-      title: "Hackathon Challenge",
-      description: "Showcase your coding skills and build something amazing in this 48-hour hackathon.",
-      date: "Coming Soon",
-      time: "TBA",
-      location: "JIS University Campus",
-      category: "Competition"
-    },
-    {
-      id: 3,
-      title: "Tech Workshop Series",
-      description: "Learn practical skills from industry experts in web development, AI, and cloud computing.",
-      date: "Coming Soon",
-      time: "TBA",
-      location: "JIS University Campus",
-      category: "Workshop"
-    },
-    {
-      id: 4,
-      title: "Career Talk Session",
-      description: "Hear from senior professionals about career opportunities and growth in tech industry.",
-      date: "Coming Soon",
-      time: "TBA",
-      location: "JIS University Campus",
-      category: "Seminar"
     }
   ]
 
