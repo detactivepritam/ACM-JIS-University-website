@@ -40,7 +40,8 @@ export default function EventsPage() {
           </div>
 
           {/* Events Grid */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-12 w-full">
+            <div className="w-full max-w-md">
             {upcomingEvents.map((event) => (
               <div
                 key={event.id}
@@ -86,6 +87,7 @@ export default function EventsPage() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
 
           {/* Call to Action Section */}
