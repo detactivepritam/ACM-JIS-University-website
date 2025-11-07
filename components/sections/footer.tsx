@@ -5,8 +5,9 @@ export function Footer() {
     { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/acm-jisu-ab9504391/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { label: "Twitter/X", icon: Twitter, href: "https://x.com/Jisu_acm?t=XK-qpu9_bIsONRbeB9dxHA&s=09" },
     { label: "Instagram", icon: Instagram, href: "https://www.instagram.com/jisu.acm?igsh=Ym50eG9jYnZudnNs" },
-    { label: "GitHub", icon: Github, href: "#" },
-    { label: "Google Groups", icon: Mail, href: "#" },
+    { label: "Facebook", icon: Facebook, href: "https://www.facebook.com/share/17HKYz1z1j/" },
+    { label: "GitHub", icon: Github, href: "https://github.com/detactivepritam/ACM-JIS-University-website" },
+    { label: "Email", icon: Mail, href: "mailto:acm@jisuniversity.ac.in" },
   ]
 
   return (
