@@ -119,38 +119,43 @@ export default function EventsPage() {
           </div>
 
           {/* Call to Action Section */}
-          <div className="rounded-xl border border-primary/20 bg-primary/5 p-8 text-center md:p-12">
-            <h2 className="mb-4 text-2xl font-bold">Stay Updated on Our Events</h2>
-            <p className="mx-auto mb-8 max-w-xl text-muted-foreground">
-              Don't miss out on amazing opportunities to learn, connect, and grow with ACM JIS University. 
-              Check back soon for detailed information and registration!
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button asChild>
-                <Link href="/">
-                  Back to Home
-                </Link>
-              </Button>
-              <Button variant="outline">
-                Follow Us on Social Media
-              </Button>
+          <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-primary/5 to-background p-8 md:p-12 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-50" />
+            <div className="relative">
+              <h2 className="mb-4 text-3xl font-bold">Stay Updated on Our Events</h2>
+              <p className="mx-auto mb-8 max-w-xl text-muted-foreground text-base leading-relaxed">
+                Don't miss out on amazing opportunities to learn, connect, and grow with ACM JIS University.
+                Check back soon for detailed information and registration!
+              </p>
+              <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4">
+                <Button asChild className="px-8">
+                  <Link href="/">
+                    Back to Home
+                  </Link>
+                </Button>
+                <Button variant="outline" className="px-8">
+                  Follow Us on Social Media
+                </Button>
+              </div>
             </div>
           </div>
 
           {/* Coming Soon Banner */}
-          <div className="mt-12 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 p-8 text-center">
-            <div className="inline-block rounded-full bg-primary/20 px-4 py-2 mb-4">
-              <p className="text-sm font-medium text-primary flex items-center gap-2">
+          <div className="mt-16 rounded-2xl bg-gradient-to-r from-primary/15 via-primary/10 to-primary/5 border border-primary/30 p-8 md:p-10 text-center relative overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-primary/10 blur-2xl" />
+            <div className="absolute -bottom-20 -left-20 w-40 h-40 rounded-full bg-primary/10 blur-2xl" />
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-2 mb-4 border border-primary/30">
                 <span className="relative inline-block">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-pulse"></span>
-                  <span className="relative inline-block h-2 w-2 rounded-full bg-primary"></span>
+                  <span className="relative inline-block h-2.5 w-2.5 rounded-full bg-primary"></span>
                 </span>
-                We're Preparing Something Special
+                <p className="text-sm font-semibold text-primary">We're Preparing Something Special</p>
+              </div>
+              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                More events will be announced soon. Subscribe to our email list or follow our social media for updates.
               </p>
             </div>
-            <p className="text-muted-foreground">
-              More events will be announced soon. Subscribe to our email list or follow our social media for updates.
-            </p>
           </div>
         </div>
       </section>
