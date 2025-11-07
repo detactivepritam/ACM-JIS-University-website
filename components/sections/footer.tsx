@@ -25,7 +25,8 @@ export function Footer() {
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
-                {...(!isEmail && { target: "_blank", rel: "noreferrer" })}
+                target={isEmail ? undefined : "_blank"}
+                rel={isEmail ? undefined : "noreferrer"}
                 className="inline-flex items-center justify-center rounded-full bg-background p-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow"
               >
                 <IconComponent className="h-5 w-5 text-primary" />
