@@ -13,10 +13,10 @@ export function SiteHeader() {
         <Link href="#" className="flex items-center gap-2 font-semibold tracking-tight">
           <img 
             src="/acm-logo.jpg" 
-            alt="ACM JIS University Logo" 
+            alt="JIS University ACM Student Chapter Logo" 
             className="h-10 w-auto object-contain mix-blend-multiply"
           />
-          <span className="text-lg">ACM JIS University</span>
+          <span className="text-lg">JIS University ACM Student Chapter</span>
         </Link>
         <nav className={cn("items-center gap-6 md:flex", open ? "flex" : "hidden")}>
           <a href="#about" className="text-sm text-muted-foreground hover:text-foreground">

@@ -36,7 +36,7 @@ export function Footer() {
         </div>
 
         <p className="mt-10 text-xs text-muted-foreground">
-          Website developed and maintained by ACM JIS University Web Team.
+          Website developed and maintained by JIS University ACM Student Chapter Web Team.
         </p>
       </div>
     </footer>

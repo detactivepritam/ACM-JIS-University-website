@@ -10,7 +10,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative mx-auto max-w-6xl px-4 py-28 text-center md:py-36">
         <h1 className="text-balance text-4xl font-semibold tracking-tight text-white md:text-6xl">
-          ACM JIS University Student Chapter
+          JIS University ACM Student Chapter
         </h1>
         <p className="mx-auto mt-4 max-w-3xl text-pretty text-white md:text-lg">
           ACM brings together computing educators, researchers, and professionals to inspire dialogue, share resources,
