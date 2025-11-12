@@ -270,7 +270,7 @@ export default function FullTeamPage() {
 
       <div className="text-center mb-16">
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          The dedicated individuals who make ACM JIS University Student Chapter a thriving community
+          The dedicated individuals who make JIS University ACM Student Chapter a thriving community
         </p>
       </div>
 

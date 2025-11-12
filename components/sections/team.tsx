@@ -263,7 +263,7 @@ export function Team() {
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold tracking-tight mb-4">Meet Our Team</h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          The dedicated individuals who make ACM JIS University Student Chapter a thriving community
+          The dedicated individuals who make JIS University ACM Student Chapter a thriving community
         </p>
       </div>
 

@@ -10,7 +10,7 @@ export default function EventsPage() {
   const upcomingEvents = [
     {
       id: 1,
-      title: "ACM Tech Meetup 2024",
+      title: "ACM Tech Meetup 2025",
       description: "Join us for an exciting discussion on latest trends in computer science and technology.",
       date: "Coming Soon",
       time: "TBA",
@@ -41,7 +41,7 @@ export default function EventsPage() {
               Events Coming Soon
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              ACM JIS University Student Chapter is planning amazing events, workshops, and competitions.
+              JIS University ACM Student Chapter is planning amazing events, workshops, and competitions.
               Stay tuned for more details!
             </p>
           </div>
@@ -124,7 +124,7 @@ export default function EventsPage() {
             <div className="relative">
               <h2 className="mb-4 text-3xl font-bold">Stay Updated on Our Events</h2>
               <p className="mx-auto mb-8 max-w-xl text-muted-foreground text-base leading-relaxed">
-                Don't miss out on amazing opportunities to learn, connect, and grow with ACM JIS University.
+                Don't miss out on amazing opportunities to learn, connect, and grow with JIS University ACM Student Chapter.
                 Check back soon for detailed information and registration!
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4">

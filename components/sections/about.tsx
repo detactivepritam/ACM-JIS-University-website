@@ -12,7 +12,7 @@ export function About() {
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-pretty text-3xl font-semibold tracking-tight">What We Represent?</h2>
         <p className="mt-3 text-pretty text-muted-foreground">
-          At the ACM JIS University Student Chapter, we provide a vibrant platform for students to gain exposure, build
+          At the JIS University ACM Student Chapter, we provide a vibrant platform for students to gain exposure, build
           technical skills, and connect with a global community of computing professionals.
         </p>
       </div>

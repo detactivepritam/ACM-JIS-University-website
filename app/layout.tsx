@@ -7,9 +7,9 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "ACM JIS University Student Chapter",
+  title: "JIS University ACM Student Chapter",
   description:
-    "Official website of the ACM Student Chapter at JIS University — events, vision, team, and ways to connect.",
+    "Official website of the JIS University ACM Student Chapter — events, vision, team, and ways to connect.",
   generator: "v0.app",
 }
 
